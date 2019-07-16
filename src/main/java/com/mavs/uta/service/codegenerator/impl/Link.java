@@ -16,7 +16,7 @@ public class Link extends WebComponent {
 		// TODO Auto-generated method stub
 		String component = "\nWebElement element_" +  getComponentName()
 				+ " = driver.findElement("+getSearchIdentifierString()+");";
-		if (isAction()) {
+		if (getAction() !=null && getAction().equals("click")) {
 			component += "\nelement_" + getComponentName() + ".click();";
 
 		}

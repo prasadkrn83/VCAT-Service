@@ -39,4 +39,10 @@ public class WebElement {
 		this.elementvalue = elementvalue;
 	}
 
+	@Override
+	public String toString() {
+		return "WebElement [elementtype=" + elementtype + ", elementxpath=" + elementxpath + ", elementaction="
+				+ elementaction + ", elementvalue=" + elementvalue + "]";
+	}
+
 }

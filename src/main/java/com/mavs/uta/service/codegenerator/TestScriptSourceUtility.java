@@ -149,7 +149,7 @@ public class TestScriptSourceUtility {
 		Method method = TestScriptSourceUtility.addMethod(source, "void", "testCaseMethod"+methodCount,null,null);
 		for (WebElement webElement : elements) {
 			WebComponent component = WebComponentFactory.getComponent(webElement.getElementtype(), 
-					webElement.getElementvalue(), webElement.getElementxpath(), webElement.getElementaction()==null);
+					webElement.getElementvalue(), webElement.getElementxpath(), webElement.getElementaction());
 			method.getDefinition().append(component.getComponentDefinition());
 			
 		}

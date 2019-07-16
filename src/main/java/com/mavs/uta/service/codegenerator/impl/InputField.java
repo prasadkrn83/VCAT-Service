@@ -18,7 +18,7 @@ public class InputField extends WebComponent{
 		String component = "\nWebElement inputBox_" +  getComponentName()
 				+ " = driver.findElement("+getSearchIdentifierString()+");";
 		
-		if (isAction() && null != getWebComponentValue()) {
+		if (getAction() !=null && getAction().equals("set")) {
 			component += "\ninputBox_" +  getComponentName()
 					+ ".sendKeys(\"" + getWebComponentValue() + "\");";
 

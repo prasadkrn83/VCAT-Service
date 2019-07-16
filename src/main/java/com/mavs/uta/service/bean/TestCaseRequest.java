@@ -5,6 +5,9 @@ import java.util.List;
 public class TestCaseRequest {
 	
 	private String url;
+	private String os;
+	private String chromeversion;
+	private String executiontime;
 	private List<WebElement> elements;
 	
 	public String getUrl() {
@@ -19,6 +22,34 @@ public class TestCaseRequest {
 	public void setElements(List<WebElement> elements) {
 		this.elements = elements;
 	}
+	public String getOs() {
+		return os;
+	}
+
+	public void setOs(String os) {
+		this.os = os;
+	}
+	public String getChromeversion() {
+		return chromeversion;
+	}
+	public void setChromeversion(String chromeversion) {
+		this.chromeversion = chromeversion;
+	}
+	public String getExecutiontime() {
+		double duration = Double.parseDouble(this.executiontime);
+		int seconds = (int) ((duration / 1000) % 60);
+		int minutes = (int) ((duration / 1000) / 60);
+		return String.format("%d minutes and %d seconds.",  minutes, seconds);
+	}
+	public void setExecutiontime(String executiontime) {
+		this.executiontime = executiontime;
+	}
+	@Override
+	public String toString() {
+		return "TestCaseRequest [url=" + url + ", os=" + os + ", chromeversion=" + chromeversion + ", executiontime="
+				+ getExecutiontime() + ", elements=" + elements + "]";
+	}
+
 	
 	
 

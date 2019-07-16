@@ -20,6 +20,7 @@ public class TestCaseController {
 		String sourceFileName=SeleniumConstants.TESTCASE_NAME;
 		String sourcePackage=SeleniumConstants.TESTCASE_BASE_PACKAGE;
 		String URL=testCaseRequest.getUrl();
+		System.out.println(testCaseRequest.toString());
 		TestScriptSource source;
 		try {
 			source =  TestScriptSourceUtility.createTestScriptSourceFile(sourceFileName, sourcePackage, URL,testCaseRequest.getElements());

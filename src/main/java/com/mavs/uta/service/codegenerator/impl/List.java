@@ -15,7 +15,7 @@ public class List extends WebComponent {
 		
 		String component = "\nSelect select_" +  getComponentName()
 				+ " = new Select(driver.findElement("+getSearchIdentifierString()+"));";
-		if (isAction() && null != getWebComponentValue() ) {
+		if (getAction() !=null && getAction().equals("click")) {
 			component += "\nselect_" +  getComponentName()
 					+ ".selectByIndex(" + getWebComponentValue() + ");";
 		}

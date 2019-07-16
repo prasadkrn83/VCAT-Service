@@ -30,7 +30,7 @@ public abstract class WebComponent {
 	/**
 	 * The boolean flag to represent if the component is set an action or not
 	 */
-	private boolean action;
+	private String action;
 
 	/**
 	 * The component name of the component
@@ -77,11 +77,11 @@ public abstract class WebComponent {
 		this.inputType = inputType;
 	}
 
-	public boolean isAction() {
+	public String getAction() {
 		return action;
 	}
 
-	public void setAction(boolean action) {
+	public void setAction(String action) {
 		this.action = action;
 	}
 

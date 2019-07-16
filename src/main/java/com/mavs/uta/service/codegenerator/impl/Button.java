@@ -14,7 +14,7 @@ public class Button extends WebComponent {
 		
 		String component = "\n\tWebElement button_" + getComponentName()
 				+ " = driver.findElement("+getSearchIdentifierString()+");";
-		if (isAction()) {
+		if (getAction() !=null && getAction().equals("click")) {
 			component += "\n\tbutton_" + getComponentName() + ".click();";
 
 		}

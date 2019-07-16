@@ -10,6 +10,7 @@ public class VcatServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(VcatServiceApplication.class, args);
+		
 	}
 
 }

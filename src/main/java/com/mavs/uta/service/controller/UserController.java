@@ -15,9 +15,9 @@ public class UserController {
 
 	@Autowired
 	private UserRepository userRepository;
-
+/*
 	@PostMapping(path="/login",consumes="application/json", produces = "application/json")
 	public User login(@RequestBody User user) {
 		return (User) userRepository.findByUsernameAndPassword(user.getUsername(),user.getPassword());
-	}
+	}*/
 }
