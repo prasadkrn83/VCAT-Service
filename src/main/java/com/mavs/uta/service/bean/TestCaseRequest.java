@@ -8,6 +8,7 @@ public class TestCaseRequest {
 	private String os;
 	private String chromeversion;
 	private String executiontime;
+	private String username;
 	private List<WebElement> elements;
 	
 	public String getUrl() {
@@ -44,11 +45,20 @@ public class TestCaseRequest {
 	public void setExecutiontime(String executiontime) {
 		this.executiontime = executiontime;
 	}
+	
+	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	@Override
 	public String toString() {
 		return "TestCaseRequest [url=" + url + ", os=" + os + ", chromeversion=" + chromeversion + ", executiontime="
-				+ getExecutiontime() + ", elements=" + elements + "]";
+				+ executiontime + ", username=" + username + ", elements=" + elements + "]";
 	}
+
 
 	
 	
