@@ -5,9 +5,11 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mavs.uta.service.bean.TestCaseMetric;
@@ -64,6 +66,12 @@ public class TestCaseController {
 		testCaseMetric.setTestCase(source.getSourceAsString().toString());
 		testCaseRepository.save(testCaseMetric);
 		return ResponseEntity.ok(response);
+	}
+	
+	@GetMapping(value="/testcase")
+	public boolean verifyUser(@RequestParam String username) {
+    
+		return testCaseRepository.existsByUsername(username);
 	}
 
 }

@@ -6,6 +6,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 import com.mavs.uta.service.bean.TestCaseMetric;
 
 @RestResource(exported = false)
-public interface TestCaseRepository extends CrudRepository<TestCaseMetric,Long> {
+public interface TestCaseRepository extends CrudRepository<TestCaseMetric, Long> {
+	boolean existsByUsername(String username);
 
-	}
+}
