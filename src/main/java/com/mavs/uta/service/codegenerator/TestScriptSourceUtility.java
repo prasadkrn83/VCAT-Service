@@ -88,7 +88,7 @@ public class TestScriptSourceUtility {
 
 	/**
 	 * 
-	 * The writeSourceToFile is used to write the source hierarchy as a hava source
+	 * The writeSourceToFile is used to write the source hierarchy as a java source
 	 * file to the file system
 	 * 
 	 * @param source
@@ -133,7 +133,7 @@ public class TestScriptSourceUtility {
 
 		StringBuffer definition = new StringBuffer();
 		definition.append(
-				"\n\tSystem.setProperty(\"webdriver.chrome.driver\", \"D:\\\\ChromeDriver\\\\chromedriver.exe\");");
+				"\n\tSystem.setProperty(\"webdriver.chrome.driver\", \"c:\\\\Softwares\\\\chromedriver.exe\");");
 		definition.append("\n\tWebDriver driver = new ChromeDriver();");
 		definition.append("\n\tdriver.get(\"" + URL + "\");");
 		definition.append("\n\tThread.sleep(1000);\n");
@@ -145,14 +145,21 @@ public class TestScriptSourceUtility {
 	
 	private static void addTestCaseMethodToSource(TestScriptSource source, List<WebElement> elements) throws Exception {
 		// TODO Auto-generated method stub
+		List<String> exceptions = new ArrayList<>();
+		exceptions.add("Exception");
+		
+		List<Argument> arguments = new ArrayList<>();
+		Argument arg = new Argument("WebDriver", "driver");
+		arguments.add(arg);
+		
 		int methodCount=source.getMethods().size()+1;
-		Method method = TestScriptSourceUtility.addMethod(source, "void", "testCaseMethod"+methodCount,null,null);
+		Method method = TestScriptSourceUtility.addMethod(source, "void", "testCaseMethod"+methodCount,exceptions,arguments);
 		for (WebElement webElement : elements) {
 			WebComponent component = WebComponentFactory.getComponent(webElement.getElementtype(), 
 					webElement.getElementvalue(), webElement.getElementxpath(), webElement.getElementaction());
 			method.getDefinition().append(component.getComponentDefinition());
 			
 		}
-		source.getMainMethod().getDefinition().append("\n\ttestCaseMethod"+methodCount+"();\n");
+		source.getMainMethod().getDefinition().append("\n\ttestCaseMethod"+methodCount+"(driver);\n");
 	}
 }

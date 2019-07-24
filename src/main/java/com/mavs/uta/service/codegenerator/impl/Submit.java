@@ -15,7 +15,7 @@ public class Submit extends WebComponent {
 		// TODO Auto-generated method stub
 		String component = "\n\tWebElement submit_" + getComponentName() + " = driver.findElement("
 				+ getSearchIdentifierString() + ");";
-		if (getAction() != null && getAction().equals("click")) {
+		if (getAction() != null && (getAction().equals("click") || getAction().equals("submit"))) {
 			component += "\n\tsubmit_" + getComponentName() + ".submit();";
 
 		}

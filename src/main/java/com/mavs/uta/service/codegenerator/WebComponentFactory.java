@@ -24,6 +24,8 @@ public class WebComponentFactory {
 			break;
 
 		case "input field":
+		case "INPUT":
+			
 			component = new InputField("inputField", elementXpath);
 			break;
 
